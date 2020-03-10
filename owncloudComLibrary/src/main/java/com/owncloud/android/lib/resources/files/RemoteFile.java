@@ -179,8 +179,7 @@ public class RemoteFile implements Parcelable, Serializable {
     private static String getRemotePathFromUrl(HttpUrl url, String userId) {
         final String davFilesPath = WEBDAV_FILES_PATH_4_0 + userId;
         final String absoluteDavPath = Uri.decode(url.encodedPath());
-        final String pathToOc = absoluteDavPath.split(davFilesPath)[0];
-        return absoluteDavPath.replace(pathToOc + davFilesPath, "");
+        return absoluteDavPath.replace(davFilesPath, "");
     }
 
     /**
